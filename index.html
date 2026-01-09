@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>⚡ Smart Home Dashboard</h1>
+    <p id="date">Memuat waktu...</p>
+
+    <div class="lamp-grid">
+        <div id="btn-1" class="lamp-btn off"><div class="electric"></div><h3>Lampu 1</h3><span class="ldr" id="ldr1">LDR: --</span></div>
+        <div id="btn-2" class="lamp-btn off"><div class="electric"></div><h3>Lampu 2</h3><span class="ldr" id="ldr2">LDR: --</span></div>
+        <div id="btn-3" class="lamp-btn off"><div class="electric"></div><h3>Lampu 3</h3><span class="ldr" id="ldr3">LDR: --</span></div>
+        <div id="btn-4" class="lamp-btn off"><div class="electric"></div><h3>Saklar Utama</h3><span class="ldr">Manual Control</span></div>
+    </div>
+
+    <div class="power-box">
+        <h2>Monitoring Listrik (PZEM-004T)</h2>
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+            <div>
+                <p><span id="power" style="font-size: 3rem; color: #d6a3ff;">0.0</span> Watt</p>
+                <small>Daya Aktif</small>
+            </div>
+            <div style="border-left: 1px solid rgba(255,255,255,0.2); padding-left: 40px;">
+                <p><span id="voltage" style="font-size: 3rem; color: #00f2ff;">0.0</span> V</p>
+                <small>Tegangan AC</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-box"><h2>Grafik Daya (Watt)</h2><canvas id="powerChart"></canvas></div>
+        <div class="chart-box"><h2>Grafik Tegangan (Volt)</h2><canvas id="voltageChart"></canvas></div>
+    </div>
+
+    <div class="schedule-box">
+        <h2>Penjadwalan Otomatis</h2>
+        <div class="input-group">
+            <label>ON</label><input type="time" id="onTime">
+            <label>OFF</label><input type="time" id="offTime">
+            <button id="saveSchedule">Simpan Jadwal</button>
+        </div>
+        <p id="scheduleInfo">Memuat jadwal...</p>
+    </div>
+</div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
